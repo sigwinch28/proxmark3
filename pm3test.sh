@@ -113,7 +113,6 @@ while true; do
   if ! CheckInvoke "pm3-flash-all interpreter" "./pm3-flash-all -h"; then break; fi
   if ! CheckInvoke "pm3-flash-bootrom interpreter" "./pm3-flash-bootrom -h"; then break; fi
   if ! CheckInvoke "pm3-flash-fullimage interpreter" "./pm3-flash-fullimage -h"; then break; fi
-  if ! CheckInvoke "client/proxmark3 interpreter" "./client/proxmark3 -h"; then break; fi
   if ! CheckInvoke "tools/analyzesize.py interpreter" "./tools/analyzesize.py -h"; then break; fi
   if ! CheckInvoke "tools/findbits.py interpreter" "./tools/findbits.py"; then break; fi
   if ! CheckInvoke "tools/mkversion.sh interpreter" "./tools/mkversion.sh"; then break; fi
@@ -157,7 +156,6 @@ while true; do
   if ! CheckExecute "mfkey64 test" "tools/mfkey/mfkey64 9c599b32 82a4166c a1e458ce 6eea41e0 5cadf439" "Found Key: \[ffffffffffff\]"; then break; fi
   if ! CheckExecute "mfkey64 long trace test" "tools/mfkey/./mfkey64 14579f69 ce844261 f8049ccb 0525c84f 9431cc40 7093df99 9972428ce2e8523f456b99c831e769dced09 8ca6827b ab797fd369e8b93a86776b40dae3ef686efd c3c381ba 49e2c9def4868d1777670e584c27230286f4 fbdcd7c1 4abd964b07d3563aa066ed0a2eac7f6312bf 9f9149ea" "Found Key: \[091e639cb715\]"; then break; fi
   if ! CheckExecute "nonce2key test" "tools/nonce2key/nonce2key e9cadd9c a8bf4a12 a020a8285858b090 050f010607060e07 5693be6c00000000" "key recovered: fc00018778f7"; then break; fi
-
   printf "\n${C_GREEN}Tests [OK]${C_NC}\n\n"
   exit 0
 done
